@@ -7,7 +7,10 @@ module.exports = {
       colors: {
         'background-green': '#101F25',
         'fg-white': '#EFEFEF'
-      }
+      },
+      fontFamily: {
+        'montserrat': ['Montserrat']
+      },
     },
   },
   plugins: [],
