@@ -11,11 +11,11 @@ interface Props {
 
 const ItemsContainer: React.FC<Props> = ({tasks}) => {
   return (
-    <>
+    <ul className='h-96 overflow-auto flex flex-col items-center scrollbar-hide'>
       {tasks.map((task) => (
-        <Items name={task.name}/>
+        <Items name={task.name} key={task.id} />
       ))}
-    </>
+    </ul>
   )
 }
 
