@@ -9,17 +9,12 @@ interface Props {
   }>
 }
 
-function debug(thingToDebug: any): void {
-  return console.log(thingToDebug)
-}
-
 const ItemsContainer: React.FC<Props> = ({ tasks }) => {
   return (
     <ul className="h-96 overflow-auto flex flex-col items-center scrollbar-hide">
       {tasks.map((task) => (
         <Items name={task.name} key={task.id} />
       ))}{' '}
-      {debug(tasks)}
     </ul>
   )
 }
