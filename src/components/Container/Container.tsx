@@ -9,12 +9,12 @@ export default function Container() {
   // This function is received by <InputForm /> and it returns the new Task.
   // Updates the current tasks (userTasks state) with the new { task } received.
   const addTaskHandler = (task: Task) => {
-    setUserTasks([...userTasks, task])
+    setUserTasks((prevUserTasks) => [task, ...prevUserTasks])
     console.log(task)
   }
 
   useEffect(() => {
-    setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '{}'))
+    setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '[]'))
   }, [])
 
   useEffect(() => {
