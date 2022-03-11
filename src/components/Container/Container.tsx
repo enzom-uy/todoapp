@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import InputForm from '../InputForm/InputForm'
+import ItemsContainer from './ItemsContainer';
 
 export default function Container() {
   const [userTasks, setUserTasks] = useState(
@@ -11,6 +12,7 @@ export default function Container() {
   return (
     <div className="flex flex-col px-4 container mx-auto sm:max-w-screen-sm">
       <InputForm onAddTask={addTaskHandler} userTasks={userTasks} />
+      <ItemsContainer tasks={userTasks} />
     </div>
   )
 }
