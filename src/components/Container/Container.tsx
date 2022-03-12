@@ -28,7 +28,6 @@ export default function Container() {
     <div className="flex flex-col px-4 container mx-auto sm:max-w-screen-sm">
       <InputForm onAddTask={addTaskHandler} />
       <ItemsContainer tasks={userTasks} />
-      {console.log('En Container.tsx se renderiza dos veces')}
     </div>
   )
 }
