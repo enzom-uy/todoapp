@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import 'normalize.css'
 
-// PrimeReact Stuff
 import 'primereact/resources/themes/md-dark-indigo/theme.css' //theme
 import 'primereact/resources/primereact.min.css' //core css
 import 'primeicons/primeicons.css' //icons
