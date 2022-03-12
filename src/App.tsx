@@ -1,15 +1,13 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import 'normalize.css'
+import styles from './App.module.scss'
 
-import 'primereact/resources/themes/md-dark-indigo/theme.css' //theme
-import 'primereact/resources/primereact.min.css' //core css
-import 'primeicons/primeicons.css' //icons
 import Container from './components/Container/Container'
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Navbar />
       <Container />
     </div>
