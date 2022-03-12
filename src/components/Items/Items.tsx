@@ -8,7 +8,12 @@ interface Props {
 const Items: React.FC<Props> = ({ name }) => {
   return (
     <li>
-      <Card className='h-12 flex items-center mb-3' title={name} />
+      <Card
+        className="mb-3 p-0 flex flex-col justify-center"
+        style={{ width: '25rem' }}
+      >
+        {name}
+      </Card>
     </li>
   )
 }
