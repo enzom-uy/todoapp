@@ -14,16 +14,18 @@ export default function Container() {
   }
 
   useEffect(() => {
+    window.localStorage.setItem('Task', JSON.stringify(userTasks))
+  }, [userTasks])
+
+  useEffect(() => {
     setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '[]'))
   }, [])
 
-  useEffect(() => {
-    window.localStorage.setItem('Task', JSON.stringify(userTasks))
-  }, [userTasks])
 
   return (
     <div className="flex flex-col px-4 container mx-auto sm:max-w-screen-sm">
       <InputForm onAddTask={addTaskHandler} />
+      {console.log('Test')}
       <ItemsContainer tasks={userTasks} />
     </div>
   )
