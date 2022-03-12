@@ -25,7 +25,7 @@ export default function Container() {
 
 
   return (
-    <div className="flex flex-col px-4 container mx-auto sm:max-w-screen-sm">
+    <div>
       <InputForm onAddTask={addTaskHandler} />
       <ItemsContainer tasks={userTasks} />
     </div>

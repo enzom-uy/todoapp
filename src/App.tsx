@@ -9,7 +9,7 @@ import Container from './components/Container/Container'
 
 function App() {
   return (
-    <div className="App bg-background-green h-screen flex flex-col">
+    <div className="App">
       <Navbar />
       <Container />
     </div>
