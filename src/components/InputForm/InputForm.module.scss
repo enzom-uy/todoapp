@@ -1,0 +1,35 @@
+@import '/src/sass/variables.scss';
+
+h2 {
+  font-family: $montserrat;
+  color: $text-white;
+  font-weight: 600;
+}
+
+.label_and_input {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: $text-white;
+    font-family: $montserrat;
+    font-size: .7rem;
+  }
+}
+
+input {
+  height: 25px;
+  min-width: 200px;
+  width: 40vw;
+  max-width: 300px;
+  margin-right: .5rem;
+  padding-left: .7em;
+  font-family: $montserrat;
+  font-size: .8rem;
+  font-weight: 600;
+  color: $text-white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ebebeb;
+  outline: none;
+}

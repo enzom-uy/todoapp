@@ -12,10 +12,7 @@ interface Props {
 // </Card>
 //
 const Items: React.FC<Props> = ({ name }) => {
-  return (
-    <li>
-    </li>
-  )
+  return <li>{name}</li>
 }
 
 export default Items

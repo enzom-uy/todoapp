@@ -1,6 +1,5 @@
-// React stuff
 import React, { useState } from 'react'
-
+import styles from './InputForm.module.scss'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -19,16 +18,31 @@ export default function InputForm({ onAddTask }: any) {
     setInputValue('')
   }
 
-    // <InputText
-    //   value={inputValue}
-    //   onChange={(e) => setInputValue(e.target.value)}
-    //   placeholder="Task name..."
-    // />
-    // <Button label="Submit" />
+  // <InputText
+  //   value={inputValue}
+  //   onChange={(e) => setInputValue(e.target.value)}
+  //   placeholder="Task name..."
+  // />
+  // <Button label="Submit" />
   return (
     <>
-      <h2>Create a new task</h2>
-      <form className='flex justify-center' onSubmit={handleSubmit}>
+      <h2 className={styles}>Create a new task</h2>
+      <form className={styles} onSubmit={handleSubmit}>
+        <div className={styles.label_and_input}>
+          <label htmlFor="name">New task</label>
+          <input
+            className={styles}
+            name="input"
+            id="input"
+            type="text"
+            placeholder="Create a task..."
+            onChange={(e) => setInputValue(e.target.value)}
+            value={inputValue}
+          />
+        </div>
+        <button className={styles} type="submit">
+          Create
+        </button>
       </form>
     </>
   )
