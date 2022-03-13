@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-
 import { v4 as uuidv4 } from 'uuid'
+import { Heading, Box, Flex, Input, Button } from '@chakra-ui/react'
 
 export default function InputForm({ onAddTask }: any) {
   const [inputValue, setInputValue] = useState('')
@@ -25,21 +25,35 @@ export default function InputForm({ onAddTask }: any) {
   // <Button label="Submit" />
   return (
     <>
-      <h2>Create a new task</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">New task</label>
-          <input
-            name="input"
-            id="input"
-            type="text"
-            placeholder="Create a task..."
-            onChange={(e) => setInputValue(e.target.value)}
-            value={inputValue}
-          />
-        </div>
-        <button type="submit">Create</button>
-      </form>
+      <Heading fontFamily="montserrat" textAlign='center' mb={2} fontSize={[25,25,'3ch', '4ch']}>Create a new task</Heading>
+      <Flex
+        as='form'
+        onSubmit={handleSubmit}
+        fontFamily="montserrat"
+        align={'center'}
+        mb={6}
+        direction={['column', 'column', 'column', 'row']}
+      >
+        <Input
+          placeholder="New task..."
+          size='md'
+          fontFamily="inherit"
+          variant='flushed'
+          mr={4}
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
+          mb={[2, 2]}
+        />
+        <Button
+          bg='cyan.600'
+          color="text.white"
+          type="submit"
+          _hover={{ bg: 'cyan.800' }}
+          w={['100%', '100%', '100%', '8em']}
+        >
+          Create
+        </Button>
+      </Flex>
     </>
   )
 }

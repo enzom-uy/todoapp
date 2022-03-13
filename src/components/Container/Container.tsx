@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import InputForm from '../InputForm/InputForm'
 import ItemsContainer from './ItemsContainer'
+import { Box } from '@chakra-ui/react'
 
 export default function Container() {
   type Task = { id: string; name: string; completed: boolean }
@@ -25,9 +26,9 @@ export default function Container() {
 
 
   return (
-    <div>
+    <Box w={['90%', '90%', '80vw']} maxW='40rem'>
       <InputForm onAddTask={addTaskHandler} />
       <ItemsContainer tasks={userTasks} />
-    </div>
+    </Box>
   )
 }

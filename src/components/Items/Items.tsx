@@ -1,4 +1,5 @@
 import React from 'react'
+import { ListItem, ListIcon } from '@chakra-ui/react'
 
 interface Props {
   name: string
@@ -12,7 +13,9 @@ interface Props {
 // </Card>
 //
 const Items: React.FC<Props> = ({ name }) => {
-  return <li>{name}</li>
+  return (
+    <ListItem w={'100%'} bg='cyan.300' mb={1} p={2} fontSize='lg'>{name}</ListItem>
+  )
 }
 
 export default Items

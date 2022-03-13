@@ -1,15 +1,32 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
-import 'normalize.css'
+import { Flex, Box } from '@chakra-ui/react'
 
 import Container from './components/Container/Container'
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Container />
-    </div>
+      <Flex
+        bg="bgWhite"
+        className='debug'
+        h="100vh"
+        minW='320px'
+        color="textDark.900"
+        direction="column"
+        align={'center'}
+        pt='6rem'
+      >
+        <Flex
+          direction="column"
+          align="center"
+          rounded="lg"
+        >
+          <Container />
+        </Flex>
+      </Flex>
+    </>
   )
 }
 
