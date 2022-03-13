@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styles from './InputForm.module.scss'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -26,12 +25,11 @@ export default function InputForm({ onAddTask }: any) {
   // <Button label="Submit" />
   return (
     <>
-      <h2 className={styles}>Create a new task</h2>
-      <form className={styles} onSubmit={handleSubmit}>
-        <div className={styles.label_and_input}>
+      <h2>Create a new task</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
           <label htmlFor="name">New task</label>
           <input
-            className={styles}
             name="input"
             id="input"
             type="text"
@@ -40,9 +38,7 @@ export default function InputForm({ onAddTask }: any) {
             value={inputValue}
           />
         </div>
-        <button className={styles} type="submit">
-          Create
-        </button>
+        <button type="submit">Create</button>
       </form>
     </>
   )

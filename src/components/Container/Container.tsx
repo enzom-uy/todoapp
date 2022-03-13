@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import InputForm from '../InputForm/InputForm'
 import ItemsContainer from './ItemsContainer'
-import styles from './Container.module.scss'
 
 export default function Container() {
   type Task = { id: string; name: string; completed: boolean }
@@ -26,7 +25,7 @@ export default function Container() {
 
 
   return (
-    <div className={styles.container}>
+    <div>
       <InputForm onAddTask={addTaskHandler} />
       <ItemsContainer tasks={userTasks} />
     </div>
