@@ -11,7 +11,6 @@ import '@fontsource/montserrat'
 const colors = {
   text: {
     white: '#efefef',
-    800: '#000000'
   },
   textDark: {
     900: '#011627'
