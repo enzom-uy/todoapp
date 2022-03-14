@@ -9,6 +9,8 @@ import {
   useToast
 } from '@chakra-ui/react'
 
+const textShadow = "0 0 1px rgba(0, 0, 0, 0.3)"
+
 export default function InputForm({ onAddTask, onClearTasks }: any) {
   const [inputValue, setInputValue] = useState('')
   const toast = useToast()
@@ -80,11 +82,11 @@ export default function InputForm({ onAddTask, onClearTasks }: any) {
             size="md"
             fontFamily="inherit"
             variant="flushed"
-            mr={4}
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue}
             type="text"
             mb={[2, 2]}
+            w={['100%', '100%', '100%', '26.5rem']}
           />
         </FormControl>
         <Button
@@ -97,6 +99,7 @@ export default function InputForm({ onAddTask, onClearTasks }: any) {
           mr={[0, 0, 0, 1]}
           onClick={showToast}
           fontFamily="montserrat"
+          sx={{textShadow: textShadow}}
         >
           Create
         </Button>
@@ -107,6 +110,7 @@ export default function InputForm({ onAddTask, onClearTasks }: any) {
           _hover={{ bg: 'cyan.800' }}
           w={['100%', '100%', '100%', '8em']}
           onClick={handleClearTasks}
+          sx={{textShadow: textShadow}}
         >
           Clear tasks
         </Button>
