@@ -13,7 +13,7 @@ interface Props {
 const ItemsContainer: React.FC<Props> = ({ tasks }) => {
   return (
     <List w={'100%'}>
-      <Flex direction='column' align={'center'}>
+      <Flex direction="column" align={'center'}>
         {tasks.map((task) => (
           <Items name={task.name} key={task.id} />
         ))}

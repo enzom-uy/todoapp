@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
-import { Flex, Box } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 import Container from './components/Container/Container'
 
@@ -10,19 +10,15 @@ function App() {
       <Navbar />
       <Flex
         bg="bgWhite"
-        className='debug'
+        className="debug"
         h="100vh"
-        minW='320px'
+        minW="320px"
         color="textDark.900"
         direction="column"
         align={'center'}
-        pt='6rem'
+        pt="6rem"
       >
-        <Flex
-          direction="column"
-          align="center"
-          rounded="lg"
-        >
+        <Flex direction="column" align="center" rounded="lg">
           <Container />
         </Flex>
       </Flex>

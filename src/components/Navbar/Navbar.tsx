@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Heading } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 
 export default function Navbar() {
   return (
@@ -13,9 +13,11 @@ export default function Navbar() {
       w={'100%'}
       boxShadow="xl"
       color={'text.white'}
-      position='fixed'
+      position="fixed"
     >
-      <Heading as={'h1'} size="md" sx={{ textShadow: '0px 2px 4px #00000080' }}>TO-DO APP</Heading>
+      <Heading as={'h1'} size="md" sx={{ textShadow: '0px 2px 4px #00000080' }}>
+        TO-DO APP
+      </Heading>
     </Box>
   )
 }

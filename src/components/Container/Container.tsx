@@ -13,7 +13,6 @@ export default function Container() {
     setUserTasks((prevUserTasks) => [task, ...prevUserTasks])
   }
 
-
   useEffect(() => {
     setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '[]'))
   }, [])
@@ -22,11 +21,8 @@ export default function Container() {
     window.localStorage.setItem('Task', JSON.stringify(userTasks))
   }, [userTasks])
 
-
-
-
   return (
-    <Box w={['90%', '90%', '80vw']} maxW='40rem'>
+    <Box w={['90%', '90%', '80vw']} maxW="40rem">
       <InputForm onAddTask={addTaskHandler} />
       <ItemsContainer tasks={userTasks} />
     </Box>

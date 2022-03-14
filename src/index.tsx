@@ -10,7 +10,7 @@ import '@fontsource/montserrat'
 
 const colors = {
   text: {
-    white: '#efefef',
+    white: '#ffffff'
   },
   textDark: {
     900: '#011627'
@@ -35,7 +35,7 @@ const breakpoints = createBreakpoints({
   lg: '768px',
   xl: '1024px',
   '2xl': '1366px',
-  'desktop': '1920px'
+  desktop: '1920px'
 })
 
 const theme = extendTheme({ colors, fonts, breakpoints })

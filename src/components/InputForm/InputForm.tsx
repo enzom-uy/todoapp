@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import {
   Heading,
-  Box,
   Flex,
   Input,
   Button,
@@ -86,6 +85,7 @@ export default function InputForm({ onAddTask }: any) {
           mb={[1, 1, 1, 0]}
           mr={[0, 0, 0, 1]}
           onClick={showToast}
+          fontFamily="montserrat"
         >
           Create
         </Button>
