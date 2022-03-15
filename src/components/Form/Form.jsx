@@ -9,7 +9,7 @@ import {
   useToast
 } from '@chakra-ui/react'
 
-export default function InputForm({ onAddTask, onClearTasks }: any) {
+export default function InputForm({ onAddTask, onClearTasks }) {
   const [inputValue, setInputValue] = useState('')
   const toast = useToast()
 
@@ -25,7 +25,7 @@ export default function InputForm({ onAddTask, onClearTasks }: any) {
         title: 'Task name is required.',
         description: 'Please provide a Task name.',
         status: 'error',
-        duration: 1500,
+        duration: 1200,
         isClosable: true
       })
     }
@@ -34,7 +34,7 @@ export default function InputForm({ onAddTask, onClearTasks }: any) {
         title: 'Task created successfully!',
         description: 'You should see your new task in the list.',
         status: 'success',
-        duration: 1500,
+        duration: 1200,
         isClosable: true
       })
     }

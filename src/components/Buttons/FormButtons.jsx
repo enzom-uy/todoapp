@@ -3,12 +3,7 @@ import { Button } from '@chakra-ui/react'
 
 const textShadow = '0 0 1px rgba(0, 0, 0, .3)'
 
-interface Props {
-  showToast: React.MouseEventHandler<HTMLButtonElement>
-  handleClearTasks: React.MouseEventHandler<HTMLButtonElement>
-}
-
-const FormButtons: React.FC<Props> = ({ showToast, handleClearTasks }) => {
+const FormButtons = ({ showToast, handleClearTasks }) => {
   return (
     <>
       <Button

@@ -4,17 +4,15 @@ import ItemsContainer from './ItemsContainer'
 import { Box } from '@chakra-ui/react'
 
 export default function Container() {
-  type Task = { id: string; name: string; completed: boolean }
-  const [userTasks, setUserTasks] = useState<Task[]>([])
-
+  const [userTasks, setUserTasks] = useState([])
   // This function is received by <InputForm /> and it returns the new Task.
   // Updates the current tasks (userTasks state) with the new { task } received.
-  const addTaskHandler = (task: Task) => {
+  const addTaskHandler = (task) => {
     setUserTasks((prevUserTasks) => [task, ...prevUserTasks])
   }
 
-  const getUpdatedTasks = (newTask: Task) => {
-    setUserTasks((prevUserTasks) => [newTask, ...prevUserTasks])
+  const deleteTaskHandler = (filteredTasks) => {
+    setUserTasks(filteredTasks)
   }
 
   // Clear all the tasks
@@ -36,7 +34,7 @@ export default function Container() {
   return (
     <Box w={['90%', '90%', '80vw']} maxW="40rem">
       <Form onAddTask={addTaskHandler} onClearTasks={clearTasks} />
-      <ItemsContainer tasks={userTasks} onUpdateTasks={getUpdatedTasks} />
+      <ItemsContainer tasks={userTasks} deleteTaskHandler={deleteTaskHandler} />
     </Box>
   )
 }
