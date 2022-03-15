@@ -13,10 +13,16 @@ export default function Container() {
     setUserTasks((prevUserTasks) => [task, ...prevUserTasks])
   }
 
+  const getUpdatedTasks = (newTask: Task) => {
+    setUserTasks((prevUserTasks) => [newTask, ...prevUserTasks])
+  }
+
+  // Clear all the tasks
   const clearTasks = () => {
     setUserTasks([])
   }
 
+  // Using localStorage to save the data
   useEffect(() => {
     setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '[]'))
   }, [])
@@ -25,10 +31,12 @@ export default function Container() {
     window.localStorage.setItem('Task', JSON.stringify(userTasks))
   }, [userTasks])
 
+  // Remove a task
+
   return (
     <Box w={['90%', '90%', '80vw']} maxW="40rem">
       <Form onAddTask={addTaskHandler} onClearTasks={clearTasks} />
-      <ItemsContainer tasks={userTasks} />
+      <ItemsContainer tasks={userTasks} onUpdateTasks={getUpdatedTasks} />
     </Box>
   )
 }

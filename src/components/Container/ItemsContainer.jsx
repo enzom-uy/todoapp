@@ -7,15 +7,27 @@ interface Props {
     id: string
     name: string
     completed: boolean
+  }>,
+  onUpdateTasks: Array<{
+    id: string
+    name: string
+    completed: boolean
   }>
 }
 
-const ItemsContainer: React.FC<Props> = ({ tasks }) => {
+
+const ItemsContainer: React.FC<Props> = ({ tasks, onUpdateTasks }) => {
+  function handleDeleteClick(id: string) {
+    const removeTask = tasks.filter((task) => {
+      return task.id !== id
+    })   
+    onUpdateTasks(removeTask)
+  }
   return (
     <List w={'100%'}>
       <Flex direction="column" align={'center'}>
         {tasks.map((task) => (
-          <Items name={task.name} key={task.id} />
+          <Items name={task.name} key={task.id} id={task.id} />
         ))}
       </Flex>
     </List>
