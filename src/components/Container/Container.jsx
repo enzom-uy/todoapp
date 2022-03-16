@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Form from '../Form/Form'
-import ItemsContainer from './ItemsContainer'
+import TasksContainer from './TasksContainer'
 import { Box } from '@chakra-ui/react'
 
 export default function Container() {
@@ -34,7 +34,7 @@ export default function Container() {
   return (
     <Box w={['90%', '90%', '80vw']} maxW="40rem">
       <Form onAddTask={addTaskHandler} onClearTasks={clearTasks} />
-      <ItemsContainer tasks={userTasks} deleteTaskHandler={deleteTaskHandler} />
+      <TasksContainer tasks={userTasks} deleteTaskHandler={deleteTaskHandler} />
     </Box>
   )
 }

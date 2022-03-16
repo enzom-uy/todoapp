@@ -1,5 +1,5 @@
 import React from 'react'
-import Items from '../Items/Items'
+import Task from '../Task/Task'
 import { List, Flex } from '@chakra-ui/react'
 
 const ItemsContainer = ({ tasks, deleteTaskHandler }) => {
@@ -8,7 +8,7 @@ const ItemsContainer = ({ tasks, deleteTaskHandler }) => {
     <List w={'100%'}>
       <Flex direction="column" align={'center'}>
         {tasks.map((task) => (
-          <Items name={task.name} key={task.id} id={task.id} tasks={tasks} deleteTaskHandler={deleteTaskHandler} />
+          <Task name={task.name} key={task.id} id={task.id} tasks={tasks} deleteTaskHandler={deleteTaskHandler} />
         ))}
       </Flex>
     </List>
