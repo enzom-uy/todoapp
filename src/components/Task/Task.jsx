@@ -46,7 +46,7 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
       >
         {name}
         <Flex gap="2">
-          <EditTaskModal />
+          <EditTaskModal taskId={id} taskName={name}/>
           <Button
             type="button"
             onClick={deleteTask}

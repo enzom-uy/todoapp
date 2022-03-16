@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Modal,
   ModalOverlay,
@@ -8,18 +8,21 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Button
+  Button,
+  Text,
+  Input
 } from '@chakra-ui/react'
 import { EditIcon } from '@chakra-ui/icons'
 
-const EditTaskModal = () => {
+const EditTaskModal = ({ taskId, taskName }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [currentName, setCurrentName] = useState(taskName)
   return (
     <>
       {' '}
       <Button
         type="button"
-        bg="bgRed.900"
+        colorScheme="green"
         _hover={{ bg: 'bgRed.dark' }}
         onClick={onOpen}
       >
@@ -27,16 +30,34 @@ const EditTaskModal = () => {
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent fontFamily={'montserrat'}>
           <ModalHeader>Edit the task</ModalHeader>
           <ModalCloseButton />
-          <ModalBody></ModalBody>
-
+          <ModalBody>
+            <Text fontSize="md" fontWeight={'900'} mb={2}>
+              Task name:
+            </Text>
+            <Text fontSize="md" fontWeight="600" display="inline">
+              {currentName}
+            </Text>
+            <Input
+              size="md"
+              fontFamily="inherit"
+              variant="flushed"
+              onChange={(e) => setCurrentName(e.target.value)}
+              value={currentName}
+              type="text"
+              mb={[2, 2]}
+              w={['100%', '100%', '100%', '26.5rem']}
+            />
+          </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3}>
+              Save
+            </Button>
+            <Button variant="solid" colorScheme="red" onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
