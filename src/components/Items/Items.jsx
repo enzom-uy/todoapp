@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListItem, Flex, useToast } from '@chakra-ui/react'
+import { Flex, useToast } from '@chakra-ui/react'
 
 const Items = ({ name, id, tasks, deleteTaskHandler }) => {
   const toast = useToast()
