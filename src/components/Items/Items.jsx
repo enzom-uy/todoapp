@@ -14,7 +14,14 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
     })
   }
 
-  const filterTasks = () => {
+  /*
+   * Handles the delete task feature.
+   * It filters the current tasks array and returns all tasks except the current task using the id.
+   * It's using the deleteTaskHandler function received via props from ItemsContainer and passed
+   * from Container.jsx.
+   * deleteTaskHandler function prop updates the state with the new tasks after being filtered.
+   */
+  const deleteTask = () => {
     const filteredTasks = tasks.filter((task) => {
       return task.id !== id
     })
@@ -35,8 +42,8 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
         justify="space-between"
       >
         {name}
-        <button type="button" onClick={filterTasks}>
-          Borra tarea
+        <button type="button" onClick={deleteTask}>
+          Borrar tarea
         </button>
       </Flex>
     </>
