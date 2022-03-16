@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import FormButtons from '../Buttons/FormButtons'
 import { v4 as uuidv4 } from 'uuid'
-import {
-  Heading,
-  Flex,
-  Input,
-  FormControl,
-  useToast
-} from '@chakra-ui/react'
+import { Heading, Flex, Input, FormControl, useToast } from '@chakra-ui/react'
 
 export default function InputForm({ onAddTask, onClearTasks }) {
   const [inputValue, setInputValue] = useState('')
@@ -87,7 +81,10 @@ export default function InputForm({ onAddTask, onClearTasks }) {
             w={['100%', '100%', '100%', '26.5rem']}
           />
         </FormControl>
-          <FormButtons showToast={showToast} handleClearTasks={handleClearTasks} />
+        <FormButtons
+          showToast={showToast}
+          handleClearTasks={handleClearTasks}
+        />
       </Flex>
     </>
   )
