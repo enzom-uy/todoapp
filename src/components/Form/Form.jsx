@@ -51,7 +51,7 @@ export default function InputForm({ onAddTask, onClearTasks }) {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     onAddTask(taskData)
     setInputValue('')
