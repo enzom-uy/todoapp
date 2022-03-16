@@ -14,6 +14,8 @@ import {
 } from '@chakra-ui/react'
 import { EditIcon } from '@chakra-ui/icons'
 
+// TODO the new name after edited the task needs to be saved on localStorage.
+
 const EditTaskModal = ({ taskId, taskName, onEditTask }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [currentName, setCurrentName] = useState(taskName)
