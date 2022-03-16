@@ -14,9 +14,14 @@ import {
 } from '@chakra-ui/react'
 import { EditIcon } from '@chakra-ui/icons'
 
-const EditTaskModal = ({ taskId, taskName }) => {
+const EditTaskModal = ({ taskId, taskName, onEditTask }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [currentName, setCurrentName] = useState(taskName)
+
+  const submitEditTask = () => {
+    onEditTask(currentName)
+    onClose()
+  }
   return (
     <>
       {' '}
@@ -44,15 +49,20 @@ const EditTaskModal = ({ taskId, taskName }) => {
               size="md"
               fontFamily="inherit"
               variant="flushed"
-              onChange={(e) => setCurrentName(e.target.value)}
               value={currentName}
+              onChange={(e) => setCurrentName(e.target.value)}
               type="text"
               mb={[2, 2]}
               w={['100%', '100%', '100%', '26.5rem']}
             />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button
+              type='submit'
+              colorScheme="blue"
+              onClick={submitEditTask}
+              mr={3}
+            >
               Save
             </Button>
             <Button variant="solid" colorScheme="red" onClick={onClose}>

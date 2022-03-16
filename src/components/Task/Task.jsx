@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Flex, useToast, Button } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import EditTaskModal from '../Modals/EditTaskModal'
 
 const Items = ({ name, id, tasks, deleteTaskHandler }) => {
   const toast = useToast()
+  const [currentTask, setCurrentTask] = useState(name)
 
   const deletedTaskToast = () => {
     toast({
@@ -14,6 +15,10 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
       duration: 1000,
       isClosable: true
     })
+  }
+
+  const getEditedTask = (newTask) => {
+    setCurrentTask(newTask)
   }
 
   /*
@@ -44,9 +49,9 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
         justify="space-between"
         align="center"
       >
-        {name}
+        {currentTask}
         <Flex gap="2">
-          <EditTaskModal taskId={id} taskName={name}/>
+          <EditTaskModal taskId={id} taskName={name} onEditTask={getEditedTask} />
           <Button
             type="button"
             onClick={deleteTask}
