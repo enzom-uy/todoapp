@@ -1,5 +1,6 @@
 import React from 'react'
-import { Flex, useToast } from '@chakra-ui/react'
+import { Flex, useToast, Button } from '@chakra-ui/react'
+import { DeleteIcon } from '@chakra-ui/icons'
 
 const Items = ({ name, id, tasks, deleteTaskHandler }) => {
   const toast = useToast()
@@ -40,11 +41,12 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
         fontSize="lg"
         id={id}
         justify="space-between"
+        align='center'
       >
         {name}
-        <button type="button" onClick={deleteTask}>
-          Borrar tarea
-        </button>
+        <Button type="button" onClick={deleteTask} bg='bgRed.900' _hover={{ bg:'bgRed.dark'}}>
+          <DeleteIcon color='white' />
+        </Button>
       </Flex>
     </>
   )

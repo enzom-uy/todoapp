@@ -20,6 +20,10 @@ const colors = {
   },
   bgWhite: {
     900: '#FFFFFF'
+  },
+  bgRed: {
+    900: '#d9392e',
+    dark:'#9c2a22'
   }
 }
 
