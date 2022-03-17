@@ -15,7 +15,7 @@ const FormButtons = ({ showToast, handleClearTasks }) => {
         mb={[1, 1, 1, 0]}
         mr={[0, 0, 0, 1]}
         onClick={showToast}
-        fontFamily="roboto"
+        fontWeight="400"
         sx={{ textShadow: textShadow }}
       >
         Create
@@ -23,6 +23,7 @@ const FormButtons = ({ showToast, handleClearTasks }) => {
 
       <Button
         bg="cyan.600"
+        fontWeight="400"
         color="text.white"
         type="button"
         _hover={{ bg: 'cyan.800' }}
