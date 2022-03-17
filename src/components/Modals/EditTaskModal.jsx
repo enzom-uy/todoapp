@@ -16,14 +16,9 @@ import { EditIcon } from '@chakra-ui/icons'
 
 // TODO: the new name after edited the task needs to be saved on localStorage.
 
-const EditTaskModal = ({ taskId, taskName, onEditTask }) => {
+const EditTaskModal = ({ taskId, taskName }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [currentName, setCurrentName] = useState(taskName)
-
-  const submitEditTask = () => {
-    onEditTask(currentName)
-    onClose()
-  }
   return (
     <>
       {' '}
@@ -62,7 +57,6 @@ const EditTaskModal = ({ taskId, taskName, onEditTask }) => {
             <Button
               type="submit"
               colorScheme="blue"
-              onClick={submitEditTask}
               mr={3}
             >
               Save

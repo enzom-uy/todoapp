@@ -17,10 +17,6 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
     })
   }
 
-  const getEditedTask = (newTask) => {
-    setCurrentTask(newTask)
-  }
-
   /*
    * Handles the delete task feature.
    * It filters the current tasks array and returns all tasks except the current task using the id.
@@ -51,7 +47,7 @@ const Items = ({ name, id, tasks, deleteTaskHandler }) => {
       >
         {currentTask}
         <Flex gap="2">
-          <EditTaskModal taskId={id} taskName={name} onEditTask={getEditedTask} />
+          <EditTaskModal taskId={id} taskName={name} />
           <Button
             type="button"
             onClick={deleteTask}
