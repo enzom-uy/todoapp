@@ -15,7 +15,7 @@ const FormButtons = ({ showToast, handleClearTasks }) => {
         mb={[1, 1, 1, 0]}
         mr={[0, 0, 0, 1]}
         onClick={showToast}
-        fontFamily="montserrat"
+        fontFamily="roboto"
         sx={{ textShadow: textShadow }}
       >
         Create

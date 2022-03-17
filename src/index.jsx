@@ -23,13 +23,14 @@ const colors = {
   },
   bgRed: {
     900: '#d9392e',
-    dark:'#9c2a22'
+    dark: '#9c2a22'
   }
 }
 
 const fonts = {
   fonts: {
-    montserrat: 'Montserrat, sans-serif'
+    montserrat: 'Montserrat, sans-serif',
+    roboto: 'Roboto'
   }
 }
 

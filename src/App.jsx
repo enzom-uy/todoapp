@@ -17,6 +17,7 @@ function App() {
         direction="column"
         align={'center'}
         pt="6rem"
+        fontFamily="roboto"
       >
         <Flex direction="column" align="center" rounded="lg">
           <Container />

@@ -53,7 +53,7 @@ export default function InputForm({ onAddTask, onClearTasks }) {
   return (
     <>
       <Heading
-        fontFamily="montserrat"
+        fontFamily="roboto"
         textAlign="center"
         mb={2}
         fontSize={[25, 25, '3ch', '4ch']}
@@ -63,7 +63,7 @@ export default function InputForm({ onAddTask, onClearTasks }) {
       <Flex
         as="form"
         onSubmit={handleSubmit}
-        fontFamily="montserrat"
+        fontFamily="roboto"
         align={'center'}
         mb={6}
         direction={['column', 'column', 'column', 'row']}
