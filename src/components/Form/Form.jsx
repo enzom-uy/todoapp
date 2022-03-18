@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import FormButtons from '../Buttons/FormButtons'
 import { v4 as uuidv4 } from 'uuid'
 import { Heading, Flex, Input, FormControl, useToast } from '@chakra-ui/react'
+import { TasksContext } from '../../context/TasksContext'
 
-export default function InputForm({ onAddTask, onClearTasks }) {
+export default function InputForm() {
   const [inputValue, setInputValue] = useState('')
+  const { addTaskHandler } = useContext(TasksContext)
   const toast = useToast()
 
   const taskData = {
@@ -34,21 +36,11 @@ export default function InputForm({ onAddTask, onClearTasks }) {
     }
   }
 
-  const handleClearTasks = () => {
-    onClearTasks()
-    toast({
-      title: 'Tasks cleared.',
-      description: 'Your to-do list is now empty.',
-      status: 'info',
-      duration: 1500,
-      isClosable: true
-    })
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    onAddTask(taskData)
+    addTaskHandler(taskData)
     setInputValue('')
+    showToast()
   }
   return (
     <>
@@ -81,10 +73,7 @@ export default function InputForm({ onAddTask, onClearTasks }) {
             w={['100%', '100%', '100%', '26.5rem']}
           />
         </FormControl>
-        <FormButtons
-          showToast={showToast}
-          handleClearTasks={handleClearTasks}
-        />
+        <FormButtons />
       </Flex>
     </>
   )

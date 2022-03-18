@@ -1,9 +1,23 @@
-import * as React from 'react'
-import { Button } from '@chakra-ui/react'
+import React, { useContext } from 'react'
+import { Button, useToast } from '@chakra-ui/react'
+import { TasksContext } from '../../context/TasksContext'
 
 const textShadow = '0 0 1px rgba(0, 0, 0, .3)'
 
-const FormButtons = ({ showToast, handleClearTasks }) => {
+const FormButtons = ({ showToast }) => {
+  const { clearTasks } = useContext(TasksContext)
+  const toast = useToast()
+
+  const handleClearTasks = () => {
+    clearTasks()
+    toast({
+      title: 'Tasks cleared.',
+      description: 'Your to-do list is now empty.',
+      status: 'info',
+      duration: 1500,
+      isClosable: true
+    })
+  }
   return (
     <>
       <Button
