@@ -4,7 +4,7 @@ import { Flex, useToast, Button } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
 import EditTaskModal from '../Modals/EditTaskModal'
 
-const Items = ({ name, id }) => {
+const Task = ({ name, id }) => {
     const toast = useToast()
     const { userTasks, deleteTaskHandler } = useContext(TasksContext)
 
@@ -63,4 +63,4 @@ const Items = ({ name, id }) => {
     )
 }
 
-export default Items
+export default Task
