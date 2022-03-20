@@ -21,10 +21,15 @@ const TasksContextProvider = ({ children }) => {
         setUserTasks([])
     }
 
-    // Edit task handler
+    /*
+     * Edit task handler function.
+     *
+     * Receives the updated task name and task id from EditTaskModal.
+     * Maps through all the current tasks, and if it finds one that its id matches the taskId received
+     * updates the Task.name replacing the old one by newName, else it just returns the task.
+     * Finally, updates the state to be the previous tasks and the new one edited.
+     */
     const editTaskHandler = (newName, taskId) => {
-        // const findedTask = userTasks.some((task) => task.id === taskId)
-        // findedTask = {...findedTask, name: newName}
         const tasksUpdated = userTasks.map((task) => {
             if (task.id === taskId) {
                 const editedTask = { ...task, name: newName }
@@ -34,7 +39,6 @@ const TasksContextProvider = ({ children }) => {
             }
         })
         setUserTasks(tasksUpdated)
-        console.log(userTasks)
     }
 
     // Using localStorage to save the data
