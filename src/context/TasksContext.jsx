@@ -21,6 +21,22 @@ const TasksContextProvider = ({ children }) => {
         setUserTasks([])
     }
 
+    // Edit task handler
+    const editTaskHandler = (newName, taskId) => {
+        // const findedTask = userTasks.some((task) => task.id === taskId)
+        // findedTask = {...findedTask, name: newName}
+        const tasksUpdated = userTasks.map((task) => {
+            if (task.id === taskId) {
+                const editedTask = { ...task, name: newName }
+                return editedTask
+            } else {
+                return task
+            }
+        })
+        setUserTasks(tasksUpdated)
+        console.log(userTasks)
+    }
+
     // Using localStorage to save the data
     useEffect(() => {
         setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '[]'))
@@ -34,7 +50,8 @@ const TasksContextProvider = ({ children }) => {
         userTasks,
         addTaskHandler,
         deleteTaskHandler,
-        clearTasks
+        clearTasks,
+        editTaskHandler
     }
     return <Provider value={contextValue}>{children}</Provider>
 }

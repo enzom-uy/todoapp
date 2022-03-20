@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { TasksContext } from '../../context/TasksContext'
+
 import {
     Modal,
     ModalOverlay,
@@ -17,6 +19,13 @@ import { EditIcon } from '@chakra-ui/icons'
 const EditTaskModal = ({ taskId, taskName }) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [currentName, setCurrentName] = useState(taskName)
+    const { editTaskHandler } = useContext(TasksContext)
+
+    const onEditTask = () => {
+        editTaskHandler(currentName, taskId)
+        onClose()
+    }
+
     return (
         <>
             {' '}
@@ -52,7 +61,7 @@ const EditTaskModal = ({ taskId, taskName }) => {
                         />
                     </ModalBody>
                     <ModalFooter>
-                        <Button type="submit" colorScheme="blue" mr={3}>
+                        <Button type="submit" colorScheme="blue" mr={3} onClick={onEditTask}>
                             Save
                         </Button>
                         <Button
