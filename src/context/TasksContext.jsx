@@ -4,8 +4,12 @@ export const TasksContext = createContext()
 
 const { Provider } = TasksContext
 
+const completedTasksArray = []
+
 const TasksContextProvider = ({ children }) => {
     const [userTasks, setUserTasks] = useState([])
+    const [completedTasks, setCompletedTasks] = useState(completedTasksArray)
+
     // This function is received by <InputForm /> and it returns the new Task.
     // Updates the current tasks (userTasks state) with the new { task } received.
     const addTaskHandler = (task) => {
@@ -41,6 +45,14 @@ const TasksContextProvider = ({ children }) => {
         setUserTasks(tasksUpdated)
     }
 
+    // Set task as completed
+    const setTaskAsCompleted = (taskId) => {
+        let currentTask = userTasks.find((task) => task.id === taskId)
+        currentTask = {...currentTask, completed: true}
+        setCompletedTasks((prevCompletedTasks) => [currentTask, ...prevCompletedTasks])
+    }
+    console.log(completedTasks)
+
     // Using localStorage to save the data
     useEffect(() => {
         setUserTasks(JSON.parse(window.localStorage.getItem('Task') || '[]'))
@@ -55,7 +67,8 @@ const TasksContextProvider = ({ children }) => {
         addTaskHandler,
         deleteTaskHandler,
         clearTasks,
-        editTaskHandler
+        editTaskHandler,
+        setTaskAsCompleted
     }
     return <Provider value={contextValue}>{children}</Provider>
 }

@@ -32,7 +32,7 @@ const EditTaskModal = ({ taskId, taskName }) => {
             <Button
                 type="button"
                 colorScheme="green"
-                _hover={{ bg: 'bgRed.dark' }}
+                _hover={{ bg: 'green.700' }}
                 onClick={onOpen}
             >
                 <EditIcon color="white" />

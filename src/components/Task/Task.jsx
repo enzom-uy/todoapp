@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react'
 import { TasksContext } from '../../context/TasksContext'
 import { Flex, useToast, Button } from '@chakra-ui/react'
-import { DeleteIcon } from '@chakra-ui/icons'
+import { DeleteIcon, CheckIcon } from '@chakra-ui/icons'
 import EditTaskModal from '../Modals/EditTaskModal'
 
 const Task = ({ name, id }) => {
     const toast = useToast()
-    const { userTasks, deleteTaskHandler } = useContext(TasksContext)
+    const { userTasks, deleteTaskHandler, setTaskAsCompleted } = useContext(TasksContext)
 
     const deletedTaskToast = () => {
         toast({
@@ -33,6 +33,11 @@ const Task = ({ name, id }) => {
         deletedTaskToast()
     }
 
+    // Set task as completed
+    const completeTaskHandler = () => {
+        setTaskAsCompleted(id)
+    }
+
     return (
         <>
             <Flex
@@ -48,6 +53,14 @@ const Task = ({ name, id }) => {
             >
                 {name}
                 <Flex gap="2">
+                    <Button
+                        type="button"
+                        onClick={completeTaskHandler}
+                        colorScheme='green'
+                        _hover={{ bg: 'green.700' }}
+                    >
+                        <CheckIcon color="white" />
+                    </Button>
                     <EditTaskModal taskId={id} taskName={name} />
                     <Button
                         type="button"
