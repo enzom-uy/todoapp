@@ -50,6 +50,8 @@ const TasksContextProvider = ({ children }) => {
         let currentTask = userTasks.find((task) => task.id === taskId)
         currentTask = {...currentTask, completed: true}
         setCompletedTasks((prevCompletedTasks) => [currentTask, ...prevCompletedTasks])
+        const tasksUpdated = userTasks.filter((task) => task.id !== taskId)
+        setUserTasks(tasksUpdated)
     }
     console.log(completedTasks)
 
@@ -61,6 +63,15 @@ const TasksContextProvider = ({ children }) => {
     useEffect(() => {
         window.localStorage.setItem('Task', JSON.stringify(userTasks))
     }, [userTasks])
+
+    // Using localStorage to save the completedTasks array
+    useEffect(() => {
+        setCompletedTasks(JSON.parse(window.localStorage.getItem('CompletedTasks') || '[]'))
+    }, [])
+
+    useEffect(() => {
+        window.localStorage.setItem('CompletedTasks', JSON.stringify(completedTasks))
+    }, [completedTasks])
 
     const contextValue = {
         userTasks,
