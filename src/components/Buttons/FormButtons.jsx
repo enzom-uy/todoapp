@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Button, useToast } from '@chakra-ui/react'
+import { Button, useToast, Flex } from '@chakra-ui/react'
 import { TasksContext } from '../../context/TasksContext'
 
 const textShadow = '0 0 1px rgba(0, 0, 0, .3)'
@@ -19,7 +19,7 @@ const FormButtons = ({ showToast }) => {
         })
     }
     return (
-        <>
+        <Flex justify={'center'}>
             <Button
                 bg="cyan.600"
                 color="text.white"
@@ -47,7 +47,7 @@ const FormButtons = ({ showToast }) => {
             >
                 Clear tasks
             </Button>
-        </>
+        </Flex>
     )
 }
 

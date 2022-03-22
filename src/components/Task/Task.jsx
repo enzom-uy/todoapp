@@ -18,6 +18,15 @@ const Task = ({ name, id }) => {
         })
     }
 
+    const completedTaskToast = () => {
+        toast({
+            title: `Congratulations! You completed the task: ${name} 💪`,
+            status: 'success',
+            duration: 1000,
+            isClosable: true
+        })
+    }
+
     /*
      * Handles the delete task feature.
      * It filters the current tasks array and returns all tasks except the current task using the id.
@@ -36,6 +45,7 @@ const Task = ({ name, id }) => {
     // Set task as completed
     const completeTaskHandler = () => {
         setTaskAsCompleted(id)
+        completedTaskToast()
     }
 
     return (

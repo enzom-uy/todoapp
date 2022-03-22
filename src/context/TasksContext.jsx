@@ -53,7 +53,6 @@ const TasksContextProvider = ({ children }) => {
         const tasksUpdated = userTasks.filter((task) => task.id !== taskId)
         setUserTasks(tasksUpdated)
     }
-    console.log(completedTasks)
 
     // Using localStorage to save the data
     useEffect(() => {
