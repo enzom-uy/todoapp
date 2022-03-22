@@ -19,7 +19,7 @@ function App() {
                 pt="6rem"
                 fontFamily="roboto"
             >
-                <Flex direction="column" align="center" rounded="lg">
+                <Flex direction="column" align="center" rounded="lg" w={'100%'}>
                     <Container />
                 </Flex>
             </Flex>
