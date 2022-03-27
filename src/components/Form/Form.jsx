@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import FormButtons from '../Buttons/FormButtons'
 import { TasksContext } from '../../context/TasksContext'
+import { db } from '../../firebase'
+import { addDoc, collection } from 'firebase/firestore'
 
 // Random & unique ID generator
 import { v4 as uuidv4 } from 'uuid'
@@ -18,11 +20,17 @@ export default function InputForm() {
     const { addTaskHandler } = useContext(TasksContext)
     const toast = useToast()
 
+
     const taskData = {
         id: uuidv4(),
         name: inputValue,
         date: userDate,
         completed: false
+    }
+    const addTaskToFirebase = () => {
+        const userTasksRef = collection(db, 'userTasks')
+        const addTask = addDoc(userTasksRef, taskData)
+        console.log(addTask)
     }
 
     const showToast = () => {
@@ -52,6 +60,7 @@ export default function InputForm() {
         setInputValue('')
         setUserDate('')
         showToast()
+        addTaskToFirebase()
     }
 
     return (
