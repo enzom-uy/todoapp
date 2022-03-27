@@ -19,7 +19,7 @@ const FormButtons = ({ showToast }) => {
         })
     }
     return (
-        <Flex justify={'center'}>
+        <Flex justify={'center'} gap={2}>
             <Button
                 bg="cyan.600"
                 color="text.white"

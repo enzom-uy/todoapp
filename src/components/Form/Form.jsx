@@ -14,13 +14,14 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 export default function InputForm() {
     const [inputValue, setInputValue] = useState('')
-    const [startDate, setStartDate] = useState(new Date())
+    const [userDate, setUserDate] = useState('')
     const { addTaskHandler } = useContext(TasksContext)
     const toast = useToast()
 
     const taskData = {
         id: uuidv4(),
         name: inputValue,
+        date: userDate,
         completed: false
     }
 
@@ -49,8 +50,10 @@ export default function InputForm() {
         e.preventDefault()
         addTaskHandler(taskData)
         setInputValue('')
+        setUserDate('')
         showToast()
     }
+
     return (
         <>
             <Heading
@@ -82,16 +85,12 @@ export default function InputForm() {
                         w='100%'
                     />
                 </FormControl>
-                <Flex w={'200px'}>
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                        allowSameDay={true}
-                        minDate={startDate}
-                    />
+                <Flex w={'200px'} m={2} justify='center'>
+                        <Input type="date" value={userDate} onChange={(e) => setUserDate(e.target.value)}/>
                 </Flex>
                 <FormButtons />
             </Flex>
         </>
     )
 }
+

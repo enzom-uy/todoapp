@@ -9,7 +9,6 @@ const completedTasksArray = []
 const TasksContextProvider = ({ children }) => {
     const [userTasks, setUserTasks] = useState([])
     const [completedTasks, setCompletedTasks] = useState(completedTasksArray)
-
     // This function is received by <InputForm /> and it returns the new Task.
     // Updates the current tasks (userTasks state) with the new { task } received.
     const addTaskHandler = (task) => {
@@ -45,7 +44,16 @@ const TasksContextProvider = ({ children }) => {
         setUserTasks(tasksUpdated)
     }
 
-    // Set task as completed
+    /*
+     * Set task as complete handler function.
+     *
+     * Receives the task.
+     * Saves the current task inside the let variable **currentTask**, using .find()
+     * Replaces the "completed" parameter from false to true.
+     * Adds the task to the completedTasks state array.
+     * Then, filters the userTasks array and returns all the tasks except the already completed task.
+     * Updates the userTasks state array, removing the completed one.
+     */
     const setTaskAsCompleted = (taskId) => {
         let currentTask = userTasks.find((task) => task.id === taskId)
         currentTask = {...currentTask, completed: true}

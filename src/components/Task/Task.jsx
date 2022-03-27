@@ -4,9 +4,10 @@ import { Flex, useToast, Button, Text } from '@chakra-ui/react'
 import { DeleteIcon, CheckIcon } from '@chakra-ui/icons'
 import EditTaskModal from '../Modals/EditTaskModal'
 
-const Task = ({ name, id }) => {
+const Task = ({ name, id, date, dateLimit }) => {
     const toast = useToast()
     const { userTasks, deleteTaskHandler, setTaskAsCompleted } = useContext(TasksContext)
+    const currentDate = new Date()
 
     const deletedTaskToast = () => {
         toast({
@@ -59,28 +60,28 @@ const Task = ({ name, id }) => {
                 fontSize="lg"
                 id={id}
                 justify="space-between"
-                align="center"
+                align="left"
                 direction={['column', 'column', 'column', 'row']}
             >
-                <Flex>
-                    <Text as='p' maxW={['25ch', '25ch','28ch','43ch']}>{name}</Text>
+                <Flex direction="column">
+                    <Text as="p" maxW={['25ch', '25ch', '28ch', '43ch']}>
+                        {name}
+                    </Text>
+                    <Text as="p" maxW={['25ch', '25ch', '28ch', '43ch']} fontSize=".8rem" mb={1}>
+{date === '' ? 'No hay fecha límite' : 'Fecha límite: ' + date}
+                    </Text>
                 </Flex>
-                <Flex gap="2">
+                <Flex gap="2" alignSelf="center">
                     <Button
                         type="button"
                         onClick={completeTaskHandler}
-                        colorScheme='green'
+                        colorScheme="green"
                         _hover={{ bg: 'green.700' }}
                     >
                         <CheckIcon color="white" />
                     </Button>
                     <EditTaskModal taskId={id} taskName={name} />
-                    <Button
-                        type="button"
-                        onClick={deleteTask}
-                        bg="bgRed.900"
-                        _hover={{ bg: 'bgRed.dark' }}
-                    >
+                    <Button type="button" onClick={deleteTask} bg="bgRed.900" _hover={{ bg: 'bgRed.dark' }}>
                         <DeleteIcon color="white" />
                     </Button>
                 </Flex>
@@ -88,5 +89,4 @@ const Task = ({ name, id }) => {
         </>
     )
 }
-
 export default Task

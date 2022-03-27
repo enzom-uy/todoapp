@@ -9,8 +9,9 @@ const ItemsContainer = () => {
         <List w={'100%'}>
             <Flex direction="column" align={'center'}>
                 {userTasks.map((task) => (
-                    <Task name={task.name} key={task.id} id={task.id} />
+                    <Task name={task.name} key={task.id} id={task.id} date={task.date} dateLimit={task.limit} />
                 ))}
+
             </Flex>
         </List>
     )
