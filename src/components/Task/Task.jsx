@@ -6,9 +6,7 @@ import EditTaskModal from '../Modals/EditTaskModal'
 
 const Task = ({ name, id, date, dateLimit }) => {
     const toast = useToast()
-    const { userTasks, deleteTaskHandler, setTaskAsCompleted } = useContext(TasksContext)
-    const currentDate = new Date()
-
+    const { userTasks, deleteTaskHandler, setTaskAsCompleted, userInteraction, setUserInteraction } = useContext(TasksContext)
     const deletedTaskToast = () => {
         toast({
             title: 'Task deleted.',
@@ -41,12 +39,14 @@ const Task = ({ name, id, date, dateLimit }) => {
         })
         deleteTaskHandler(filteredTasks)
         deletedTaskToast()
+        setUserInteraction(!userInteraction)
     }
 
     // Set task as completed
     const completeTaskHandler = () => {
         setTaskAsCompleted(id)
         completedTaskToast()
+        setUserInteraction(!userInteraction)
     }
 
     return (

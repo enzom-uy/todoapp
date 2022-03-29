@@ -10,27 +10,22 @@ import { v4 as uuidv4 } from 'uuid'
 // Chakra stuff
 import { Heading, Flex, Input, FormControl, useToast } from '@chakra-ui/react'
 
-// Date picker
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-
 export default function InputForm() {
     const [inputValue, setInputValue] = useState('')
     const [userDate, setUserDate] = useState('')
-    const { addTaskHandler } = useContext(TasksContext)
+    const { addTaskHandler, userInteraction, setUserInteraction } = useContext(TasksContext)
     const toast = useToast()
-
 
     const taskData = {
         id: uuidv4(),
         name: inputValue,
         date: userDate,
-        completed: false
+        completed: false,
+        createdAt: new Date()
     }
     const addTaskToFirebase = () => {
         const userTasksRef = collection(db, 'userTasks')
-        const addTask = addDoc(userTasksRef, taskData)
-        console.log(addTask)
+        addDoc(userTasksRef, {...taskData, timestamp: new Date()})
     }
 
     const showToast = () => {
@@ -61,6 +56,7 @@ export default function InputForm() {
         setUserDate('')
         showToast()
         addTaskToFirebase()
+        setUserInteraction(!userInteraction)
     }
 
     return (

@@ -9,6 +9,7 @@ const completedTasksArray = []
 const TasksContextProvider = ({ children }) => {
     const [userTasks, setUserTasks] = useState([])
     const [completedTasks, setCompletedTasks] = useState(completedTasksArray)
+    const [userInteraction, setUserInteraction] = useState(false)
     // This function is received by <InputForm /> and it returns the new Task.
     // Updates the current tasks (userTasks state) with the new { task } received.
     const addTaskHandler = (task) => {
@@ -86,7 +87,9 @@ const TasksContextProvider = ({ children }) => {
         deleteTaskHandler,
         clearTasks,
         editTaskHandler,
-        setTaskAsCompleted
+        setTaskAsCompleted,
+        userInteraction,
+        setUserInteraction
     }
     return <Provider value={contextValue}>{children}</Provider>
 }
