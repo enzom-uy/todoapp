@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext, startTransition } from 'react'
 import { TasksContext } from '../../context/TasksContext'
 
 import {
@@ -54,7 +54,7 @@ const EditTaskModal = ({ taskId, taskName }) => {
                             fontFamily="inherit"
                             variant="flushed"
                             value={currentName}
-                            onChange={(e) => setCurrentName(e.target.value)}
+                            onChange={(e) => startTransition( () => setCurrentName(e.target.value))}
                             type="text"
                             mb={[2, 2]}
                             w={['100%', '100%', '100%', '26.5rem']}

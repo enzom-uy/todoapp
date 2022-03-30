@@ -14,8 +14,6 @@ const ItemsContainer = () => {
     const { userInteraction } = useContext(TasksContext)
     const [tasks, setTasks] = useState([])
 
-    console.log(orderBy)
-
     // It is used to get the tasks from the database
     // It is also used to set the tasks in the state
     // It is also used to listen for changes in the database

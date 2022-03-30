@@ -20,13 +20,13 @@ export default function InputForm() {
         id: uuidv4(),
         name: inputValue,
         date: userDate,
-        completed: false,
-        createdAt: new Date()
+        completed: false
     }
     const addTaskToFirebase = () => {
         const userTasksRef = collection(db, 'userTasks')
         addDoc(userTasksRef, {...taskData, timestamp: new Date()})
     }
+
 
     const showToast = () => {
         if (inputValue === '') {
