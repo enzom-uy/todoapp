@@ -14,12 +14,9 @@ export default function Navbar() {
             boxShadow="xl"
             color={'text.white'}
             position="fixed"
+            zIndex={1}
         >
-            <Heading
-                as={'h1'}
-                size="md"
-                sx={{ textShadow: '0px 2px 4px #00000080' }}
-            >
+            <Heading as={'h1'} size="md" sx={{ textShadow: '0px 2px 4px #00000080' }}>
                 TO-DO APP
             </Heading>
         </Box>
