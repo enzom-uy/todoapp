@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/todoapp/static/css/main.4eb92f65.css",
+    "main.js": "/todoapp/static/js/main.33e4ad92.js",
+    "static/media/montserrat-all-400-normal.woff": "/todoapp/static/media/montserrat-all-400-normal.aa917f2f47304e192c88.woff",
+    "static/media/montserrat-latin-400-normal.woff2": "/todoapp/static/media/montserrat-latin-400-normal.5d169d5efcd03fdcc0d7.woff2",
+    "static/media/montserrat-latin-ext-400-normal.woff2": "/todoapp/static/media/montserrat-latin-ext-400-normal.78f49f9fae55910fc2ae.woff2",
+    "static/media/montserrat-cyrillic-ext-400-normal.woff2": "/todoapp/static/media/montserrat-cyrillic-ext-400-normal.292f0ac24f2654f6e295.woff2",
+    "static/media/montserrat-cyrillic-400-normal.woff2": "/todoapp/static/media/montserrat-cyrillic-400-normal.57021f86f3fe9d3ba3c8.woff2",
+    "static/media/montserrat-vietnamese-400-normal.woff2": "/todoapp/static/media/montserrat-vietnamese-400-normal.ba00b1a6e1e5778dbf9b.woff2",
+    "index.html": "/todoapp/index.html",
+    "main.4eb92f65.css.map": "/todoapp/static/css/main.4eb92f65.css.map",
+    "main.33e4ad92.js.map": "/todoapp/static/js/main.33e4ad92.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4eb92f65.css",
+    "static/js/main.33e4ad92.js"
+  ]
+}
