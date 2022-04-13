@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import FormButtons from '../Buttons/FormButtons'
 import { TasksContext } from '../../context/TasksContext'
 import { db } from '../../firebase'
@@ -10,16 +10,11 @@ import { v4 as uuidv4 } from 'uuid'
 // Chakra stuff
 import { Heading, Flex, Input, FormControl, useToast } from '@chakra-ui/react'
 
-// Date picker
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-
 export default function InputForm() {
     const [inputValue, setInputValue] = useState('')
     const [userDate, setUserDate] = useState('')
     const { addTaskHandler } = useContext(TasksContext)
     const toast = useToast()
-
 
     const taskData = {
         id: uuidv4(),
@@ -65,12 +60,7 @@ export default function InputForm() {
 
     return (
         <>
-            <Heading
-                fontFamily="roboto"
-                textAlign="center"
-                mb={2}
-                fontSize={[25, 25, '3ch', '4ch']}
-            >
+            <Heading fontFamily="roboto" textAlign="center" mb={2} fontSize={[25, 25, '3ch', '4ch']}>
                 Create a new task
             </Heading>
             <Flex
@@ -91,15 +81,14 @@ export default function InputForm() {
                         value={inputValue}
                         type="text"
                         mb={[2, 2]}
-                        w='100%'
+                        w="100%"
                     />
                 </FormControl>
-                <Flex w={'200px'} m={2} justify='center'>
-                        <Input type="date" value={userDate} onChange={(e) => setUserDate(e.target.value)}/>
+                <Flex w={'200px'} m={2} justify="center">
+                    <Input type="date" value={userDate} onChange={(e) => setUserDate(e.target.value)} />
                 </Flex>
                 <FormButtons />
             </Flex>
         </>
     )
 }
-

@@ -1,13 +1,12 @@
-import React, { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { TasksContext } from '../../context/TasksContext'
 import { Flex, useToast, Button, Text } from '@chakra-ui/react'
 import { DeleteIcon, CheckIcon } from '@chakra-ui/icons'
 import EditTaskModal from '../Modals/EditTaskModal'
 
-const Task = ({ name, id, date, dateLimit }) => {
+const Task = ({ name, id, date }) => {
     const toast = useToast()
     const { userTasks, deleteTaskHandler, setTaskAsCompleted } = useContext(TasksContext)
-    const currentDate = new Date()
 
     const deletedTaskToast = () => {
         toast({
