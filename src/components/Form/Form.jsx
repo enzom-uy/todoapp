@@ -24,8 +24,7 @@ export default function InputForm() {
     }
     const addTaskToFirebase = () => {
         const userTasksRef = collection(db, 'userTasks')
-        const addTask = addDoc(userTasksRef, taskData)
-        console.log(addTask)
+        addDoc(userTasksRef, taskData)
     }
 
     const showToast = () => {
