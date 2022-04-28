@@ -1,46 +1,107 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" alt="logo" width="150" />
+  <h1>Todo-app project</h1>
+  <p>
+    Basic Todo-app made with React for learning purposes.
+  </p>
+<!-- Badges -->
+<p>
+  <a href="https://github.com/enzom-uy/todoapp/commits">
+    <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/enzom-uy/todoapp">
+  </a>
+  <a href="https://github.com/enzom-uy/todoapp/commits">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/enzom-uy/todoapp" /> 
+  </a>
+</p>
+<h4>
+    <a href="https://enzom-uy.github.io/todoapp//">Demo</a>
+  </h4>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
 
-## Available Scripts
+<!-- Table of Contents -->
 
-In the project directory, you can run:
+# :notebook_with_decorative_cover: Table of Contents
 
-### `npm start`
+- [:notebook_with_decorative_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
+  - [:star2: About the project](#star2-about-the-project)
+    - [:camera: Screenshots](#camera-screenshots)
+  - [:space_invader: Technologies](#space_invader-technologies)
+  - [Starting the project](#starting-the-project)
+    - [Prerequirements](#prerequirements)
+    - [:running: Running the project locally](#running-running-the-project-locally)
+<!-- About the Project -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## :star2: About the project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- Screenshots -->
 
-### `npm test`
+### :camera: Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="center"> 
+  <img src="https://thumbs.gfycat.com/HandsomeBouncyBabirusa-size_restricted.gif" alt="Demo gif" />
+</div>
 
-### `npm run build`
+<!-- TechStack -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :space_invader: Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [React.js](https://reactjs.org/)
+  * React is the Javascript framework that I chose for this project, since it's currently the one that interests me the most.
+* [Create React App](https://create-react-app.dev/)
+  * The project environment was built using Create-react-app.
+* [Firebase](https://firebase.google.com/)
+  * Google's Firebase allowed me to use Firestore as a free and easy-to-use database.
+* [Chakra UI](https://chakra-ui.com/), [Chakra UI Icons](https://chakra-ui.com/icons/)
+  * I chose to use a Component Library like Chakra UI because it allowed me to be more focused on my code, instead of styling. It increased my development time, and it's the one that I find more easy to customize if I need to.
+  * Chakra needs [Framer-motion](https://www.framer.com/motion/) to work 
+* [uuid](https://www.npmjs.com/package/uuid)
+  *  I used uuid to generate unique IDs for each task. At the moment of making the web app, React 18 was not officially released yet, so I couln't use the new useId() hook.
+<!-- Getting Started -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Starting the project.
 
-### `npm run eject`
+<!-- Prerequisites -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequirements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project uses either yarn or npm as dependency/package manager. You should have npm installed if you already have Node. If you choose to use yarn, run the next command to install it:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+ npm i -g yarn
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- Run Locally -->
 
-## Learn More
+### :running: Running the project locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clone the project:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  git clone https://github.com/enzom-uy/todoapp.git
+```
+
+Go to the project directory:
+
+```bash
+  cd todoapp
+```
+
+Install dependencies:
+
+```bash
+# with yarn:
+  yarn
+# with npm:
+  npm install
+```
+
+Start the development server:
+
+```bash
+# with yarn:
+  yarn start
+# with npm:
+  npm start
+```
